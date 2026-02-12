@@ -29,12 +29,21 @@ const Layout = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      const [m, a, c] = await Promise.all([
-        fetchMurlis(),
-        fetchAbhyas(),
-        fetchCourseDays()
-      ]);
-      setData({ murlis: m, abhyas: a, course: c });
+      try {
+        const [m, a, c] = await Promise.all([
+          fetchMurlis(),
+          fetchAbhyas(),
+          fetchCourseDays()
+        ]);
+        setData({ 
+          murlis: m || [], 
+          abhyas: a || [], 
+          course: c || [] 
+        });
+      } catch (error) {
+        console.error("Data loading failed:", error);
+        setData({ murlis: [], abhyas: [], course: [] });
+      }
     };
     loadData();
   }, []);
@@ -46,8 +55,6 @@ const Layout = () => {
   return (
     <div className={`min-h-[100dvh] w-full text-bk-text pb-24 transition-colors duration-300 overflow-x-hidden ${isHome ? 'bg-[#D32F2F]' : 'bg-bk-bg'} ${font}`}>
 
-      {/* Pages now handle their own headers (Murlis, Abhyas, Course). 
-          Favorites can reuse a simple header or similar structure. */}
       {location.pathname === '/favorites' && (
           <Header 
             title={t('nav.favorites')} 
@@ -55,7 +62,6 @@ const Layout = () => {
       )}
 
       <main className="w-full h-full">
-        {/* mode='wait' ensures the exit animation finishes before enter begins, preventing layout overlap jitter */}
         <AnimatePresence mode='wait' initial={false}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home dailyMurli={data.murlis[0]} onSearch={setSearchQuery} />} />

@@ -12,19 +12,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # Removed the cache line to prevent the error you saw
+
       - name: Install and Build
         run: |
           npm install
           npm run build
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

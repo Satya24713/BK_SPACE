@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>BK-space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Laila:wght@300;400;500;600;700&family=Teko:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Mukta:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Rozha+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bk: {
+                glow: '#FF4500',   // Intense Red-Orange
+                accent: '#FF6B35', // Warm Orange
+                highlight: '#FFB07C', // Peach Highlight
+                gold: '#FFD700',   // Gold
+                bg: '#FFF3E0',     // Light Peach Background
+                text: '#4A3B32',   // Dark Brown Text
+                glass: 'rgba(255, 107, 53, 0.25)', // Warmer glass
+              }
+            },
+            fontFamily: {
+              sans: ['"Mukta"', '"Lato"', 'sans-serif'],
+              serif: ['"Playfair Display"', '"Rozha One"', 'serif'],
+              gotu: ['"Gotu"', 'sans-serif'],
+              laila: ['"Laila"', 'sans-serif'],
+              teko: ['"Teko"', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'radiate': 'radiate 3s infinite',
+              'spin-slow': 'spin 120s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              radiate: {
+                '0%': { boxShadow: '0 0 0 0 rgba(255, 69, 0, 0.7)' },
+                '70%': { boxShadow: '0 0 0 20px rgba(255, 69, 0, 0)' },
+                '100%': { boxShadow: '0 0 0 0 rgba(255, 69, 0, 0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #FFF3E0;
+        color: #4A3B32;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #FFB07C;
+        border-radius: 3px;
+      }
+      
+      .font-hindi-title {
+        font-family: 'Rozha One', serif;
+      }
+
+      /* Hardware acceleration utility */
+      .gpu-accelerated {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+        will-change: transform, opacity;
+      }
+
+      /* Safe Area Padding */
+      .pb-safe {
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.95.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "react-icons/": "https://esm.sh/react-icons@^5.5.0/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body class="transition-colors duration-300 font-sans">
+    <div id="root" style="height: 100%;"></div>
+  </body>
+</html>

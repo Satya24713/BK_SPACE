@@ -1,24 +1,26 @@
- **BK Space** is a spiritual reading app I built for my mom. It's "vibe-coded"—meaning I focused on how it feels rather than perfect code structure.
+# BK Space
 
-My goal was simple: create a peaceful place for daily spiritual study. The app lets you read Murlis, Abhyas forms, and Course content without any distractions. I chose warm, spiritual colors throughout, especially this deep red (#D32F2F) that creates a calming atmosphere.
+A beautifully crafted, "vibe-coded" spiritual daily reading application created with love for my mom. 
 
-The reading experience keeps you focused. As you scroll, it remembers your place automatically. Important terms are bolded right in the text (like **सार:**), and a handy floating button helps you navigate long sections.
+## About The Project
+BK Space serves as a clean, uninterrupted gateway to daily spiritual study across Murlis, Abhyas forms, and Course content. The application focuses on delivering an incredibly premium, distraction-free reading experience bathed in warm spiritual tones (strict `#D32F2F` contrast).
 
-For typography, I picked one font—Laila—and used it everywhere. It gives the whole app an elegant, culturally resonant feel.
+## Features
+- **Immersive Daily Reader:** A sleek reading view featuring dynamic paragraph tracking (`IntersectionObserver`) to maintain focus, inline markdown bolding for key terms (`**सार:**`), and floating action button (FAB) navigation tools to scroll massive texts smoothly.
+- **Strictly Spiritual Typography:** The entire application is completely locked to the elegant "Laila" font, ensuring a culturally resonant, beautiful layout out-of-the-box.
+- **Hidden Admin Portal:** A PIN-protected `/#/admin-secret-upload` route provides secure database inserts and native `<select>` dropdown updating for Murlis, Abhyas forms, and Course days without needing complex third-party tools.
+- **Butter-Smooth UI:** Animated via `framer-motion` to provide tactile hover and tap physics, dynamic empty states, premium iOS-grade Date Pickers, and spinning "Soul Point" CSS background architectures.
+- **Cloud Database:** Fully powered by Supabase natively. Relies 100% on live database data, cleanly managing empty arrays natively via stunning glowing "Awakening" loaders and empty states.
 
-There's also a secret admin page (protected by a PIN) where you can easily add new content. No complicated tools needed—just simple dropdowns to update Murlis, Abhyas forms, and Course days.
+## Tech Stack
+- Frontend: React, Vite, Tailwind CSS, Framer Motion
+- Backend: Supabase (PostgreSQL)
+- Icons: React Icons (Type Safe)
 
-The interface feels smooth and tactile. Buttons respond nicely when you tap them, the date picker works just like the one on your iPhone, and subtle background animations add to the peaceful vibe.
-
-All the data lives in Supabase. When there's nothing to show, instead of boring empty states, you get beautiful glowing "Awakening" screens.
-
-Under the hood, I used React with Vite, styled everything with Tailwind CSS, and added animations through Framer Motion. The backend is Supabase (PostgreSQL), and I used React Icons for all the icons.
-
-If you want to run it yourself, create a `.env.local` file with your Supabase credentials:
-
+## Setup
+To run this project locally, ensure you provide `.env.local` containing:
 ```
 VITE_SUPABASE_URL=your_project_url
 VITE_SUPABASE_ANON_KEY=your_anon_key
 ```
-
-Then run `npm run dev` and you're good to go.
+Then run the app using `npm run dev`.

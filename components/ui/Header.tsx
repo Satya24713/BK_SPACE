@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import LanguageToggle from './LanguageToggle';
 
 interface HeaderProps {
   onSearch?: (query: string) => void;
@@ -37,8 +36,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch, searchQuery = '', title, chil
         </div>
 
         <div className="flex items-center gap-2">
-          <LanguageToggle className="scale-90" />
-          
           {onSearch && (
             <div className="flex items-center">
                 <div 

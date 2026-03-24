@@ -47,14 +47,14 @@ const Favorites: React.FC = () => {
       className={`pt-4 pb-24 px-4 max-w-2xl mx-auto min-h-screen ${font}`}
     >
       <h2 className="text-2xl font-bold text-bk-text mb-6 flex items-center gap-2 font-hindi-title">
-        <FaStar className="text-bk-gold" /> {t('fav.title')}
+        <span className="text-bk-gold"><FaStar /></span> {t('fav.title')}
       </h2>
 
       {loading ? (
         <div className="text-center mt-10 text-bk-accent animate-pulse font-sans">{t('fav.loading')}</div>
       ) : favMurlis.length === 0 ? (
         <div className="flex flex-col items-center justify-center mt-20 text-gray-400 font-sans">
-           <FaHeartBroken size={40} className="mb-4 opacity-50" />
+           <span className="mb-4 opacity-50"><FaHeartBroken size={40} /></span>
            <p>{t('fav.empty')}</p>
            <p className="text-sm mt-2">{t('fav.emptySub')}</p>
         </div>

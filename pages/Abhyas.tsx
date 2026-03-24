@@ -96,7 +96,7 @@ const Abhyas: React.FC<AbhyasProps> = ({ forms }) => {
             >
               <div className="absolute top-4 right-4 z-10">
                 <button onClick={() => toggleComplete(form.id)} className="text-bk-accent hover:scale-110 transition-transform active:scale-95">
-                  {isDone ? <FaCheckCircle size={24} /> : <FaRegCircle size={24} className="text-gray-300" />}
+                  {isDone ? <FaCheckCircle size={24} /> : <span className="text-gray-300"><FaRegCircle size={24} /></span>}
                 </button>
               </div>
 

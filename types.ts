@@ -5,7 +5,6 @@ export interface Murli {
   type: 'Sakar' | 'Avyakt';
   title_hindi: string;
   content_hindi: string;
-  content_english: string;
   audio_url?: string;
   youtube_id?: string;
   is_favorite?: boolean; // Local state helper

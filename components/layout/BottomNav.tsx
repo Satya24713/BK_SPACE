@@ -43,7 +43,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ onResetSearch }) => {
                   : 'text-gray-400 hover:text-bk-accent'
               }`}
             >
-              <item.icon size={20} className="mb-1" />
+              <span className="mb-1"><item.icon size={20} /></span>
               <span className="text-[10px] font-medium font-sans">{t(item.labelKey)}</span>
             </Link>
           );

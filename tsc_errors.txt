@@ -1,0 +1,20 @@
+App.tsx(83,39): error TS2322: Type '{ children: any[]; location: Location<any>; key: string; }' is not assignable to type 'RoutesProps'.
+  Property 'key' does not exist on type 'RoutesProps'.
+components/layout/BottomNav.tsx(46,36): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Abhyas.tsx(99,82): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Favorites.tsx(50,17): error TS2322: Type '{ className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Favorites.tsx(57,37): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Murlis.tsx(216,80): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Murlis.tsx(216,146): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Murlis.tsx(252,91): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Murlis.tsx(252,142): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.
+pages/Murlis.tsx(299,66): error TS2322: Type '{ size: number; className: string; }' is not assignable to type 'IconBaseProps'.
+  Property 'className' does not exist on type 'IconBaseProps'.

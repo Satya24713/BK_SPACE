@@ -1,22 +1,12 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
 
 // Fonts available in index.html config
 export type FontType = 'font-sans' | 'font-gotu' | 'font-laila' | 'font-teko';
 
-export const FONTS: { class: FontType; name: string }[] = [
-  { class: 'font-sans', name: 'सामान्य' },
-  { class: 'font-gotu', name: 'गोटू' },
-  { class: 'font-laila', name: 'लैला' },
-  { class: 'font-teko', name: 'टेको' },
-];
-
 interface LanguageContextType {
   font: FontType;
   fontName: string;
-  cycleFont: () => void;
-  setFont: (font: FontType) => void;
-  availableFonts: typeof FONTS;
   t: (key: string) => string;
 }
 
@@ -28,11 +18,11 @@ const translations: Record<string, string> = {
   'nav.abhyas': 'अभ्यास',
   'nav.course': 'कोर्स',
   'nav.favorites': 'पसंदीदा',
-  
+
   'home.subtitle': 'अपने आंतरिक प्रकाश से जुड़ें।',
   'home.search': 'ज्ञान के सागर में खोजें...',
   'home.dailypearl': 'आज का मोती',
-  'home.vardan': 'आज की मुरली का वरदान',
+  'home.vardan': 'आज का मुख्य सार',
   'home.readMurli': 'आज की मुरली पढ़ें',
   'home.readmore': 'और पढ़ें',
 
@@ -64,29 +54,15 @@ const translations: Record<string, string> = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [fontIndex, setFontIndex] = useState(0);
-
-  const cycleFont = () => {
-    setFontIndex((prev) => (prev + 1) % FONTS.length);
-  };
-
-  const setFont = (fontClass: FontType) => {
-    const idx = FONTS.findIndex(f => f.class === fontClass);
-    if (idx >= 0) setFontIndex(idx);
-  };
-
   const t = (key: string): string => {
     return translations[key] || key;
   };
 
   return (
-    <LanguageContext.Provider value={{ 
-      font: FONTS[fontIndex].class, 
-      fontName: FONTS[fontIndex].name,
-      cycleFont, 
-      setFont,
-      availableFonts: FONTS,
-      t 
+    <LanguageContext.Provider value={{
+      font: 'font-laila',
+      fontName: 'लैला',
+      t
     }}>
       {children}
     </LanguageContext.Provider>
